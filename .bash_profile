@@ -11,8 +11,13 @@ export PATH
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 export PATH
 
+# show git branch in command prompt
+export GITAWAREPROMPT=~/.bash/git-aware-prompt
+source "${GITAWAREPROMPT}/main.sh"
+export PS1="\u@\h \w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+
 # These lines make the terminal more colorful
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export PS1="\[$txtred\]\$git_branch\[\033[36m\]\u:\[\033[33;1m\]\w\[\033[m\]\[$txtrst\]\$ "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 alias ls='ls -GFh'
@@ -71,10 +76,3 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-###########################################
-#      Import Kyruus specific stuff       #
-###########################################
-source ~/.kyruus_settings 
-
-
