@@ -1,0 +1,4 @@
+TAB: menu-complete
+
+set colored-stats On
+set completion-ignore-case On
